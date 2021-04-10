@@ -7,7 +7,7 @@ const ObjectId = require('mongodb').ObjectID
 const password = "user"; // now error removes
 
 
-const uri = "mongodb+srv://<userName>:<pass>@cluster0.z6ers.mongodb.net/<databaseName>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://<process.env.userName>:<process.env.pass>@cluster0.z6ers.mongodb.net/<process.env.databaseName>?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express()
