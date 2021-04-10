@@ -1,0 +1,3 @@
+username:organicUser
+pass:user
+databaseName:organicdb
