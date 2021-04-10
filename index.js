@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
 client.connect(err => {
     const productCollection = client.db("organicdb").collection("products");
 
+    
+ // get data from your API 
     app.get('/products', (req,res) =>{
         productCollection.find({})
         .toArray( (err, documents) => {
@@ -32,6 +34,8 @@ client.connect(err => {
         })
     })
 
+
+    // add data in your API
     app.post("/addProduct", (req, res) => {
         const product = req.body;
         // console.log(product);
@@ -45,7 +49,7 @@ client.connect(err => {
         
     })
 
-
+    // get a specific data from whole API
     app.get('/product/:id', (req,res) => {
         console.log(req.params.id);
 
@@ -56,6 +60,7 @@ client.connect(err => {
        
     })
 
+    // update your data
     app.patch('/update/:id' , (req, res) => {
         // console.log(req.body.price);
 
@@ -73,6 +78,8 @@ client.connect(err => {
         
     })
 
+
+    //delete operation
     app.delete('/delete/:id', (req,res) =>{
         console.log(req.params.id);
             // perform actions on the collection object
